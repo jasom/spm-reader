@@ -171,9 +171,10 @@ RETURN:  okp ; the parsed lisp object if okp, or an error message if (not okp)
 (defun make-dumb-readtable ()
   (let ((dumb-readtable (cl:copy-readtable nil)))
     (loop for code from 0 below cl:char-code-limit
+	 for char = (cl:code-char code)
+	 when char
        do (cl:set-macro-character
-	   (handler-case (cl:code-char code)
-	     (t () (cl:code-char 0)))
+	char
 	   #'read-read-macro
 	   nil 
 	   dumb-readtable))

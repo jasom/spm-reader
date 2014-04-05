@@ -2,9 +2,9 @@
 
 (asdf:defsystem #:spm-reader
   :serial t
-  :description "Describe spm-reader here"
-  :author "Your Name <your.name@example.com>"
-  :license "Specify license here"
+  :description "Experimental package reader"
+  :author "Jason Miller <aidenn0@geocities.com>"
+  :license "AGPL"
   :depends-on (#:com.informatimago.common-lisp.lisp-reader
 	       #:split-sequence
 	       #:named-readtables)
